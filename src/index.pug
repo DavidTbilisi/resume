@@ -1,0 +1,47 @@
+
+include data/experience
+include mixins
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css")
+    link(rel="stylesheet", href="./css/style.css")
+    script(src="https://momentjs.com/downloads/moment.min.js", defer) 
+    script(src="./main.js", defer) 
+    title CV
+  body 
+    .bg-gradient
+      #intro.container
+        .img-border
+          img(
+            src="https://avatars.githubusercontent.com/u/14097493?s=400&u=d637f3e494d948f9f471c5a78556f84d980154fc&v=4",
+            alt="ID Photo"
+          )
+        .title
+          h2.title David Chincharashvili
+          h3.subtitle Software Engineer
+        
+
+        .right-contact
+          ul
+            li
+              a(href="#") Email
+            li 
+              a(href="#") GitHub
+            li 
+              a(href="#") LinkedIn
+
+      section#skills.container
+        h2.title Skills
+        ul.skills-list
+          li PHP, Laravel, Python, Flask, Django, React, JavaScript, SQL, MySQL, Git, Github, SCSS, Bootstrap, Ajax
+          li API, Shell Scripting, Unit Tests, Selenium
+          li Linux, Windows, MacOS, VSCode, JetBrains, Vim, Dbeaver, Asana, Trello, Notion.so, Mermaid js, Figma
+      
+      section#experience.container
+        h2.title Experience
+        each ex in exp
+          +exp(ex)
+          

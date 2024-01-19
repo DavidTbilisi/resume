@@ -1,0 +1,18 @@
+$color1: #ff124f;
+$color2: #ff00a0;
+$color3: #fe75fe;
+$color4: #6a04eb;
+$color5: #120458;
+$color5-20: lighten($color5, 10%);
+$imgSize: 100px;
+
+
+:root {
+  --color1: #{$color1};
+  --color2: #{$color2};
+  --color3: #{$color3};
+  --color4: #{$color4};
+  --color5: #{$color5};
+  --color5-20: #{$color5-20};
+}
+  

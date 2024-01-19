@@ -1,0 +1,20 @@
+mixin exp (exp)
+  
+  .experience-item
+   
+    h3.title= exp.position + ' at '
+      if exp.website != '#'
+        a(href=exp.website, target="_blank")= exp.company
+      else
+        a(href="javascript:void(0)")= exp.company
+    .subtitle
+      span.dates-range= exp.date_started + ' - ' + exp.date_ended
+      p.duration
+      p.ago 
+    p.sector= "Sector: " + exp.sector
+    ul.description-list
+      for desc in exp.description
+        li= desc 
+    ul.flex
+      for skill in ["<b>Skills:</b>", ...exp.skills]
+        li!= skill

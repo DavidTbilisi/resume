@@ -1,0 +1,23 @@
+/* Composition */
+
+h1,h2,h3,h4,h5,h6,p,span,a
+{
+    font-family: 'Montserrat', sans-serif;
+    color:white;
+}
+
+a {
+    text-decoration: none;
+}
+
+p,
+li {
+    font-size: 1rem;
+    letter-spacing: .2rem;
+    color: white;
+    line-height: 2;
+}
+
+section {
+    padding: 2rem 0;
+}
