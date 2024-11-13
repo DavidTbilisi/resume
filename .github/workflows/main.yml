@@ -1,0 +1,49 @@
+# .github/workflows/build.yml
+name: Build Pug and SCSS
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the code
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Set up Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16' # Use your required Node version
+
+      # Install Dependencies
+      - name: Install dependencies
+        run: |
+          npm install -g pug-cli sass
+          
+      # Compile Pug Files
+      - name: Compile Pug files
+        run: |
+          pug src -P --out ./
+
+      # Compile SCSS Files
+      - name: Compile SCSS files
+        run: |
+          sass src/scss/style.scss:css/style.css --no-source-map
+          
+      # Upload Build Artifacts (optional, for testing or debugging)
+      - name: Archive production files
+        uses: actions/upload-artifact@v3
+        with:
+          name: site
+          path: |
+            index.html
+            css/style.css
