@@ -1,13 +1,12 @@
-
 include data/experience
 include mixins
 doctype html
 html(lang="en")
   head
     meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css")
-    link(rel="stylesheet", href="./css/style.css")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css")
+    link(rel="stylesheet" href="./css/style.css")
     script(src="https://momentjs.com/downloads/moment.min.js", defer) 
     script(src="./main.js", defer) 
     title CV
@@ -22,8 +21,6 @@ html(lang="en")
         .title
           h2.title David Chincharashvili
           h3.subtitle Software Engineer
-        
-
         .right-contact
           ul
             li
@@ -39,9 +36,8 @@ html(lang="en")
           li PHP, Laravel, Python, Flask, Django, React, JavaScript, SQL, MySQL, Git, Github, SCSS, Bootstrap, Ajax
           li API, Shell Scripting, Unit Tests, Selenium
           li Linux, Windows, MacOS, VSCode, JetBrains, Vim, Dbeaver, Asana, Trello, Notion.so, Mermaid js, Figma
-      
+
       section#experience.container
         h2.title Experience
         each ex in exp
           +exp(ex)
-          

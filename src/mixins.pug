@@ -1,7 +1,6 @@
 mixin exp (exp)
-  
+
   .experience-item
-   
     h3.title= exp.position + ' at '
       if exp.website != '#'
         a(href=exp.website, target="_blank")= exp.company
